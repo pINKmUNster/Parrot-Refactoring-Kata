@@ -7,12 +7,10 @@ namespace Parrot
     {
         protected readonly bool _isNailed;
         protected readonly int _numberOfCoconuts;
-        protected readonly ParrotTypeEnum _type;
         protected readonly double _voltage;
 
-        protected Parrot(ParrotTypeEnum type, int numberOfCoconuts, double voltage, bool isNailed)
+        protected Parrot(int numberOfCoconuts, double voltage, bool isNailed)
         {
-            _type = type;
             _numberOfCoconuts = numberOfCoconuts;
             _voltage = voltage;
             _isNailed = isNailed;
