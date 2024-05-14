@@ -5,15 +5,13 @@ namespace Parrot
 {
     public abstract class Parrot
     {
-        protected readonly bool _isNailed;
-        protected readonly int _numberOfCoconuts;
-        protected readonly double _voltage;
+        protected readonly int NumberOfCoconuts;
+        protected readonly double Voltage;
 
-        protected Parrot(int numberOfCoconuts, double voltage, bool isNailed)
+        protected Parrot(int numberOfCoconuts, double voltage)
         {
-            _numberOfCoconuts = numberOfCoconuts;
-            _voltage = voltage;
-            _isNailed = isNailed;
+            NumberOfCoconuts = numberOfCoconuts;
+            Voltage = voltage;
         }
 
         public static Parrot CreateParrot(ParrotTypeEnum type, int numberOfCoconuts, double voltage, bool isNailed)

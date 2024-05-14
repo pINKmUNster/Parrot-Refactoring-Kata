@@ -4,17 +4,20 @@ namespace Parrot;
 
 public class NorwegianBlueParrot : Parrot
 {
-    public NorwegianBlueParrot(int numberOfCoconuts, double voltage, bool isNailed) : base(numberOfCoconuts, voltage, isNailed)
+    private readonly bool _isNailed;
+
+    public NorwegianBlueParrot(int numberOfCoconuts, double voltage, bool isNailed) : base(numberOfCoconuts, voltage)
     {
+        _isNailed = isNailed;
     }
 
     public override double GetSpeed()
     {
-        return _isNailed ? 0 : GetBaseSpeed(_voltage);
+        return _isNailed ? 0 : GetBaseSpeed(Voltage);
     }
 
     public override string GetCry()
     {
-        return  _voltage > 0 ? "Bzzzzzz" : "...";
+        return  Voltage > 0 ? "Bzzzzzz" : "...";
     }
 }
