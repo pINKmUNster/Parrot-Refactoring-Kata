@@ -6,7 +6,8 @@ public class NorwegianBlueParrot : Parrot
 {
     private readonly bool _isNailed;
 
-    public NorwegianBlueParrot(int numberOfCoconuts, double voltage, bool isNailed) : base(numberOfCoconuts, voltage)
+    public NorwegianBlueParrot(double voltage, bool isNailed) 
+        : base(voltage)
     {
         _isNailed = isNailed;
     }

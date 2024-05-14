@@ -4,14 +4,17 @@ namespace Parrot;
 
 public class AfricanParrot : Parrot
 {
-    public AfricanParrot(int numberOfCoconuts, double voltage, bool isNailed)
-        : base(numberOfCoconuts, voltage)
+    private readonly int _numberOfCoconuts;
+
+    public AfricanParrot(int numberOfCoconuts, double voltage)
+        : base(voltage)
     {
+        _numberOfCoconuts = numberOfCoconuts;
     }
 
     public override double GetSpeed()
     {
-        return Math.Max(0, GetBaseSpeed() - GetLoadFactor() * NumberOfCoconuts);
+        return Math.Max(0, GetBaseSpeed() - GetLoadFactor() * _numberOfCoconuts);
     }
 
     public override string GetCry()

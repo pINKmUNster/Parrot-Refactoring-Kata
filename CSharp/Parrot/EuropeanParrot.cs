@@ -4,10 +4,8 @@ namespace Parrot;
 
 public class EuropeanParrot : Parrot
 {
-    protected bool IsNailed;
-
-    public EuropeanParrot(int numberOfCoconuts, double voltage, bool isNailed)
-        : base(numberOfCoconuts, voltage)
+    public EuropeanParrot(double voltage)
+        : base(voltage)
     {
     }
 

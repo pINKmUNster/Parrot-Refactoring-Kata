@@ -5,12 +5,11 @@ namespace Parrot
 {
     public abstract class Parrot
     {
-        protected readonly int NumberOfCoconuts;
         protected readonly double Voltage;
 
-        protected Parrot(int numberOfCoconuts, double voltage)
+        protected Parrot(double voltage)
         {
-            NumberOfCoconuts = numberOfCoconuts;
+            
             Voltage = voltage;
         }
 
@@ -20,13 +19,13 @@ namespace Parrot
             switch (type)
             {
                 case ParrotTypeEnum.EUROPEAN:
-                    parrot = new EuropeanParrot(numberOfCoconuts, voltage, isNailed);
+                    parrot = new EuropeanParrot(voltage);
                     break;
                 case ParrotTypeEnum.AFRICAN:
-                    parrot = new AfricanParrot(numberOfCoconuts, voltage, isNailed);
+                    parrot = new AfricanParrot(numberOfCoconuts, voltage);
                     break;
                 case ParrotTypeEnum.NORWEGIAN_BLUE:
-                    parrot = new NorwegianBlueParrot(numberOfCoconuts, voltage, isNailed);
+                    parrot = new NorwegianBlueParrot(voltage, isNailed);
                     break;
                 default:
                     throw new ArgumentOutOfRangeException(nameof(type), type, null);
@@ -42,15 +41,9 @@ namespace Parrot
             return Math.Min(24.0, voltage * GetBaseSpeed());
         }
 
-        protected double GetLoadFactor()
-        {
-            return 9.0;
-        }
+        protected double GetLoadFactor() => 9.0;
 
-        protected double GetBaseSpeed()
-        {
-            return 12.0;
-        }
+        protected double GetBaseSpeed() => 12.0;
 
         public abstract string GetCry();
     }
