@@ -3,19 +3,40 @@ using System.Collections.Generic;
 
 namespace Parrot
 {
-    public class Parrot
+    public class Parrot 
     {
         private readonly bool _isNailed;
         private readonly int _numberOfCoconuts;
         private readonly ParrotTypeEnum _type;
         private readonly double _voltage;
 
-        public Parrot(ParrotTypeEnum type, int numberOfCoconuts, double voltage, bool isNailed)
+        private Parrot(ParrotTypeEnum type, int numberOfCoconuts, double voltage, bool isNailed)
         {
             _type = type;
             _numberOfCoconuts = numberOfCoconuts;
             _voltage = voltage;
             _isNailed = isNailed;
+        }
+
+        public static Parrot CreateParrot(ParrotTypeEnum type, int numberOfCoconuts, double voltage, bool isNailed)
+        {
+            Parrot parrot;
+            switch (type)
+            {
+                case ParrotTypeEnum.EUROPEAN:
+                    parrot = new Parrot(type, numberOfCoconuts, voltage, isNailed);
+                    break;
+                case ParrotTypeEnum.AFRICAN:
+                    parrot = new Parrot(type, numberOfCoconuts, voltage, isNailed);
+                    break;
+                case ParrotTypeEnum.NORWEGIAN_BLUE:
+                    parrot = new Parrot(type, numberOfCoconuts, voltage, isNailed);
+                    break;
+                default:
+                    throw new ArgumentOutOfRangeException(nameof(type), type, null);
+            }
+
+            return parrot;
         }
 
         public double GetSpeed()
@@ -65,6 +86,7 @@ namespace Parrot
                 default:
                     throw new ArgumentOutOfRangeException();
             }
+
             return value;
         }
     }
