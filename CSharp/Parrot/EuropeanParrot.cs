@@ -6,5 +6,4 @@ public class EuropeanParrot : Parrot
         : base(ParrotTypeEnum.EUROPEAN, numberOfCoconuts, voltage, isNailed)
     {
     }
-        
 }

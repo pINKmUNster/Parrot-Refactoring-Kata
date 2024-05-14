@@ -3,7 +3,7 @@ using System.Collections.Generic;
 
 namespace Parrot
 {
-    public class Parrot 
+    public class Parrot
     {
         private readonly bool _isNailed;
         private readonly int _numberOfCoconuts;
@@ -27,10 +27,10 @@ namespace Parrot
                     parrot = new EuropeanParrot(numberOfCoconuts, voltage, isNailed);
                     break;
                 case ParrotTypeEnum.AFRICAN:
-                    parrot = new Parrot(type, numberOfCoconuts, voltage, isNailed);
+                    parrot = new AfricanParrot(numberOfCoconuts, voltage, isNailed);
                     break;
                 case ParrotTypeEnum.NORWEGIAN_BLUE:
-                    parrot = new Parrot(type, numberOfCoconuts, voltage, isNailed);
+                    parrot = new NorwegianBlueParrot(numberOfCoconuts, voltage, isNailed);
                     break;
                 default:
                     throw new ArgumentOutOfRangeException(nameof(type), type, null);
